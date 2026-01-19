@@ -20,7 +20,7 @@ Application portfolio complète pour développeur Full Stack freelance, construi
 - **Responsive** parfaitement adapté mobile/tablette/desktop
 
 ### 🔐 Dashboard Admin
-- **Authentification** sécurisée avec Supabase
+- **Authentification** sécurisée
 - **Gestion des projets** (CRUD complet)
 - **Gestion des témoignages** 
 - **Gestion des messages** reçus via formulaire de contact
@@ -35,16 +35,13 @@ Application portfolio complète pour développeur Full Stack freelance, construi
 - **Tailwind CSS** - Framework CSS utility-first
 - **Framer Motion** - Animations fluides
 - **React Router** - Navigation
-- **React Hook Form** - Gestion des formulaires
-- **React Hot Toast** - Notifications
-- **Lucide React** - Icônes modernes
+- **Zustand** - State management
 
 ### Backend & Services
 - **Supabase** - Backend as a Service
   - Authentication
   - PostgreSQL Database
   - Storage pour images
-  - Real-time subscriptions
 
 ### SEO & Optimisation
 - **React Helmet Async** - Meta tags dynamiques
@@ -52,197 +49,71 @@ Application portfolio complète pour développeur Full Stack freelance, construi
 - **Robots.txt** - Instructions crawlers
 - **Schema.org** - Structured data JSON-LD
 
-### Internationalisation
-- **i18next** - Système de traduction FR/EN
-- **react-i18next** - Intégration React
-
-### State Management
-- **Zustand** - Gestion d'état légère et performante
-
 ## 📦 Installation
 
 ### Prérequis
 - Node.js 18+ 
 - npm ou yarn
-- Compte Supabase (gratuit)
 
 ### 1. Cloner le projet
-\`\`\`bash
-git clone https://github.com/votre-username/portfolio-fullstack.git
-cd portfolio-fullstack
-\`\`\`
+```bash
+git clone https://github.com/johnson-ad/porfolio-dev.git
+cd porfolio-dev
+```
 
 ### 2. Installer les dépendances
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
-### 3. Configurer Supabase
+### 3. Configuration
 
-#### Créer un projet Supabase
-1. Allez sur [supabase.com](https://supabase.com)
-2. Créez un nouveau projet
-3. Récupérez votre URL et votre clé anon
+#### Variables d'environnement
+Créez un fichier `.env` à la racine du projet en vous basant sur `.env.example` :
 
-#### Configurer les variables d'environnement
-Créez un fichier \`.env\` à la racine :
+```env
+VITE_SUPABASE_URL=your_supabase_url_here
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key_here
+VITE_APP_URL=http://localhost:5173
+```
 
-\`\`\`env
-VITE_SUPABASE_URL=votre_supabase_url
-VITE_SUPABASE_ANON_KEY=votre_supabase_anon_key
-VITE_APP_URL=http://localhost:3000
-VITE_ADMIN_EMAIL=admin@example.com
-\`\`\`
+> ⚠️ **Important** : Ne committez JAMAIS votre fichier `.env` sur Git. Il est déjà inclus dans `.gitignore`.
 
-#### Créer les tables dans Supabase
-
-Exécutez ces requêtes SQL dans l'éditeur SQL de Supabase :
-
-\`\`\`sql
--- Table des projets
-CREATE TABLE projects (
-  id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-  title TEXT NOT NULL,
-  slug TEXT UNIQUE NOT NULL,
-  description TEXT NOT NULL,
-  category TEXT NOT NULL,
-  image TEXT NOT NULL,
-  technologies TEXT[] NOT NULL,
-  demo_url TEXT,
-  github_url TEXT,
-  featured BOOLEAN DEFAULT false,
-  order_index INTEGER DEFAULT 0,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-);
-
--- Table des témoignages
-CREATE TABLE testimonials (
-  id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-  name TEXT NOT NULL,
-  position TEXT NOT NULL,
-  avatar TEXT,
-  rating INTEGER DEFAULT 5,
-  comment TEXT NOT NULL,
-  date DATE DEFAULT CURRENT_DATE,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-);
-
--- Table des messages de contact
-CREATE TABLE contact_messages (
-  id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-  name TEXT NOT NULL,
-  email TEXT NOT NULL,
-  subject TEXT NOT NULL,
-  message TEXT NOT NULL,
-  read BOOLEAN DEFAULT false,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-);
-
--- Table des articles de blog (optionnel)
-CREATE TABLE blog_posts (
-  id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-  title TEXT NOT NULL,
-  slug TEXT UNIQUE NOT NULL,
-  excerpt TEXT NOT NULL,
-  content TEXT NOT NULL,
-  image TEXT,
-  category TEXT,
-  published BOOLEAN DEFAULT false,
-  published_at TIMESTAMP WITH TIME ZONE,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-);
-
--- Activer Row Level Security (RLS)
-ALTER TABLE projects ENABLE ROW LEVEL SECURITY;
-ALTER TABLE testimonials ENABLE ROW LEVEL SECURITY;
-ALTER TABLE contact_messages ENABLE ROW LEVEL SECURITY;
-ALTER TABLE blog_posts ENABLE ROW LEVEL SECURITY;
-
--- Politiques de lecture publique
-CREATE POLICY "Public read access for projects" ON projects
-  FOR SELECT USING (true);
-
-CREATE POLICY "Public read access for testimonials" ON testimonials
-  FOR SELECT USING (true);
-
-CREATE POLICY "Public read access for published posts" ON blog_posts
-  FOR SELECT USING (published = true);
-
--- Politiques d'écriture pour les utilisateurs authentifiés
-CREATE POLICY "Authenticated users can manage projects" ON projects
-  FOR ALL USING (auth.role() = 'authenticated');
-
-CREATE POLICY "Authenticated users can manage testimonials" ON testimonials
-  FOR ALL USING (auth.role() = 'authenticated');
-
-CREATE POLICY "Authenticated users can manage messages" ON contact_messages
-  FOR ALL USING (auth.role() = 'authenticated');
-
-CREATE POLICY "Authenticated users can manage blog posts" ON blog_posts
-  FOR ALL USING (auth.role() = 'authenticated');
-
--- Permettre l'insertion publique des messages de contact
-CREATE POLICY "Anyone can insert contact messages" ON contact_messages
-  FOR INSERT WITH CHECK (true);
-\`\`\`
-
-#### Créer un utilisateur admin
-
-Dans l'onglet Authentication de Supabase :
-1. Allez dans "Users"
-2. Cliquez sur "Add User"
-3. Créez un utilisateur avec email/mot de passe
+#### Configuration du Backend
+Pour la configuration complète de la base de données et de l'authentification, consultez le fichier `INSTALLATION_GUIDE.txt` inclus dans le projet.
 
 ### 4. Lancer l'application
 
-\`\`\`bash
+```bash
 npm run dev
-\`\`\`
+```
 
-L'application sera accessible sur \`http://localhost:3000\`
+L'application sera accessible sur `http://localhost:5173`
 
 ## 🎯 Utilisation
-
-### Accéder au Dashboard Admin
-1. Naviguez vers \`/admin/login\`
-2. Connectez-vous avec vos identifiants Supabase
-3. Gérez vos contenus (projets, témoignages, messages)
 
 ### Personnalisation
 
 #### Informations personnelles
-Modifiez \`src/utils/constants.js\` pour vos informations :
-- Liens sociaux (LinkedIn, GitHub, etc.)
-- Email et téléphone
-- Compétences et expériences
-- Services et tarifs
+Modifiez `src/utils/constants.js` pour vos informations personnelles
 
 #### Traductions
 Modifiez les fichiers de traduction :
-- \`src/i18n/locales/fr.json\` (Français)
-- \`src/i18n/locales/en.json\` (Anglais)
+- `src/i18n/locales/fr.json` (Français)
+- `src/i18n/locales/en.json` (Anglais)
 
 #### Couleurs et thème
-Modifiez \`tailwind.config.js\` pour personnaliser les couleurs
-
-#### SEO
-Mettez à jour :
-- \`index.html\` - Meta tags principaux
-- \`public/sitemap.xml\` - URLs de votre site
-- \`src/utils/seo.js\` - Schema.org data
+Modifiez `tailwind.config.js` pour personnaliser les couleurs
 
 ## 📱 Structure du Projet
 
-\`\`\`
-portfolio-fullstack/
+```
+porfolio-dev/
 ├── public/
 │   ├── robots.txt
 │   ├── sitemap.xml
 │   └── manifest.json
 ├── src/
-│   ├── assets/          # Images, fonts, etc.
 │   ├── components/      # Composants React
 │   │   ├── common/      # Boutons, Inputs, Cards...
 │   │   ├── layout/      # Header, Footer
@@ -251,7 +122,7 @@ portfolio-fullstack/
 │   │   └── admin/       # Dashboard admin
 │   ├── pages/           # Pages de l'application
 │   ├── hooks/           # Custom hooks
-│   ├── services/        # Services API (Supabase)
+│   ├── services/        # Services API
 │   ├── store/           # State management (Zustand)
 │   ├── utils/           # Utilitaires et helpers
 │   ├── i18n/            # Internationalisation
@@ -262,29 +133,22 @@ portfolio-fullstack/
 ├── vite.config.js       # Configuration Vite
 ├── tailwind.config.js   # Configuration Tailwind
 └── package.json
-\`\`\`
+```
 
 ## 🚀 Déploiement
 
-### Vercel (Recommandé)
-\`\`\`bash
-# Installer Vercel CLI
-npm i -g vercel
-
-# Déployer
-vercel
-\`\`\`
-
-### Netlify
-\`\`\`bash
-# Build
+### Build Production
+```bash
 npm run build
+```
 
-# Déployer le dossier dist/
-\`\`\`
+Le dossier `dist/` contiendra les fichiers prêts pour la production.
 
-### Configuration des variables d'environnement
-N'oubliez pas de configurer vos variables d'environnement sur votre plateforme de déploiement.
+### Variables d'environnement en production
+N'oubliez pas de configurer vos variables d'environnement sur votre plateforme de déploiement :
+- `VITE_SUPABASE_URL`
+- `VITE_SUPABASE_ANON_KEY`
+- `VITE_APP_URL`
 
 ## 📊 Performance
 
@@ -295,32 +159,24 @@ N'oubliez pas de configurer vos variables d'environnement sur votre plateforme d
 
 ## 🔒 Sécurité
 
-- Authentification sécurisée avec Supabase
-- Protection CSRF
+- Authentification sécurisée
 - Validation des inputs côté client et serveur
-- Row Level Security (RLS) sur Supabase
-- HTTPS en production
+- Variables d'environnement pour les données sensibles
+- HTTPS recommandé en production
 
 ## 🤝 Contribution
 
 Les contributions sont les bienvenues ! 
 
 1. Fork le projet
-2. Créez une branche (\`git checkout -b feature/AmazingFeature\`)
-3. Commit vos changements (\`git commit -m 'Add AmazingFeature'\`)
-4. Push sur la branche (\`git push origin feature/AmazingFeature\`)
+2. Créez une branche (`git checkout -b feature/AmazingFeature`)
+3. Commit vos changements (`git commit -m 'Add AmazingFeature'`)
+4. Push sur la branche (`git push origin feature/AmazingFeature`)
 5. Ouvrez une Pull Request
 
 ## 📝 License
 
-Ce projet est sous licence MIT. Voir le fichier \`LICENSE\` pour plus de détails.
-
-## 📞 Support
-
-Pour toute question ou support :
-- Email: contact@votremail.com
-- LinkedIn: [Votre Profil](https://linkedin.com/in/votre-profil)
-- GitHub Issues: [Créer une issue](https://github.com/votre-username/portfolio-fullstack/issues)
+Ce projet est sous licence MIT.
 
 ## 🙏 Remerciements
 
@@ -329,10 +185,9 @@ Pour toute question ou support :
 - [Tailwind CSS](https://tailwindcss.com)
 - [Supabase](https://supabase.com)
 - [Framer Motion](https://www.framer.com/motion)
-- [Lucide Icons](https://lucide.dev)
 
 ---
 
 ⭐ Si ce projet vous a aidé, n'hésitez pas à lui donner une étoile !
 
-Fait avec ❤️ par [Votre Nom](https://votreportfolio.com)
+Fait avec ❤️ par Johnson-AD

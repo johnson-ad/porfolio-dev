@@ -1,0 +1,140 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Bonjour, je suis",
+    "title": "Développeur Full Stack",
+    "subtitle": "Créateur d'expériences web modernes et performantes",
+    "description": "Je transforme vos idées en applications web innovantes et sur mesure. Spécialisé en React, Node.js et solutions cloud.",
+    "cta_primary": "Voir mes projets",
+    "cta_secondary": "Me contacter",
+    "stats": {
+      "projects": "Projets réalisés",
+      "clients": "Clients satisfaits",
+      "experience": "Années d'expérience",
+      "technologies": "Technologies maîtrisées"
+    }
+  },
+  "about": {
+    "title": "À propos de moi",
+    "subtitle": "Passionné par le développement web et les technologies modernes",
+    "description": "Développeur Full Stack avec {{years}} ans d'expérience, je crée des solutions digitales qui allient performance, design et expérience utilisateur exceptionnelle.",
+    "skills_title": "Compétences techniques",
+    "experience_title": "Parcours professionnel",
+    "download_cv": "Télécharger mon CV"
+  },
+  "services": {
+    "title": "Services proposés",
+    "subtitle": "Des solutions sur mesure pour vos projets digitaux",
+    "landing_pages": {
+      "title": "Landing Pages Premium",
+      "description": "Design moderne, animations fluides et optimisation SEO pour maximiser vos conversions",
+      "features": ["Design responsive", "Animations fluides", "Optimisation SEO", "Performance optimale"]
+    },
+    "web_apps": {
+      "title": "Applications Web Full Stack",
+      "description": "Solutions complètes avec React, Node.js et bases de données performantes",
+      "features": ["Architecture scalable", "APIs sécurisées", "Dashboard admin", "Déploiement cloud"]
+    },
+    "ecommerce": {
+      "title": "Sites E-commerce",
+      "description": "Boutiques en ligne avec intégration paiement et gestion complète",
+      "features": ["Paiement sécurisé", "Gestion produits", "Suivi commandes", "Analytics intégrés"]
+    },
+    "maintenance": {
+      "title": "Maintenance & Support",
+      "description": "Support technique et évolution de vos applications existantes",
+      "features": ["Support réactif", "Mises à jour", "Optimisation", "Sécurité renforcée"]
+    },
+    "cta": "Discuter de votre projet"
+  },
+  "portfolio": {
+    "title": "Mes réalisations",
+    "subtitle": "Découvrez une sélection de mes projets récents",
+    "filter_all": "Tous",
+    "view_project": "Voir le projet",
+    "live_demo": "Démo en ligne",
+    "source_code": "Code source",
+    "technologies": "Technologies utilisées",
+    "back_to_portfolio": "Retour au portfolio"
+  },
+  "testimonials": {
+    "title": "Ce que disent mes clients",
+    "subtitle": "Retours d'expérience de clients satisfaits"
+  },
+  "contact": {
+    "title": "Travaillons ensemble",
+    "subtitle": "Vous avez un projet en tête ? Discutons-en !",
+    "form": {
+      "name": "Votre nom",
+      "email": "Votre email",
+      "subject": "Sujet",
+      "message": "Votre message",
+      "send": "Envoyer le message",
+      "sending": "Envoi en cours..."
+    },
+    "info": {
+      "title": "Informations de contact",
+      "availability": "Disponibilité",
+      "available": "Disponible pour de nouveaux projets",
+      "response_time": "Temps de réponse",
+      "hours": "< 24 heures"
+    },
+    "success": "Message envoyé avec succès ! Je vous répondrai rapidement.",
+    "error": "Une erreur est survenue. Veuillez réessayer."
+  },
+  "footer": {
+    "tagline": "Créateur d'expériences digitales",
+    "rights": "Tous droits réservés",
+    "links": {
+      "title": "Liens rapides"
+    },
+    "social": {
+      "title": "Suivez-moi"
+    }
+  },
+  "admin": {
+    "login": {
+      "title": "Connexion Admin",
+      "email": "Email",
+      "password": "Mot de passe",
+      "submit": "Se connecter",
+      "error": "Email ou mot de passe incorrect"
+    },
+    "dashboard": {
+      "title": "Tableau de bord",
+      "projects": "Projets",
+      "testimonials": "Témoignages",
+      "messages": "Messages",
+      "settings": "Paramètres",
+      "logout": "Déconnexion"
+    },
+    "projects": {
+      "title": "Gestion des projets",
+      "add_new": "Nouveau projet",
+      "edit": "Modifier",
+      "delete": "Supprimer",
+      "save": "Enregistrer",
+      "cancel": "Annuler"
+    }
+  },
+  "common": {
+    "loading": "Chargement...",
+    "read_more": "Lire la suite",
+    "see_more": "Voir plus",
+    "back": "Retour",
+    "close": "Fermer",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "search": "Rechercher",
+    "filter": "Filtrer"
+  }
+}

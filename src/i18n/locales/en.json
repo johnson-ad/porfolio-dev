@@ -1,0 +1,140 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "title": "Full Stack Developer",
+    "subtitle": "Creating modern and performant web experiences",
+    "description": "I transform your ideas into innovative and custom web applications. Specialized in React, Node.js and cloud solutions.",
+    "cta_primary": "View my work",
+    "cta_secondary": "Contact me",
+    "stats": {
+      "projects": "Projects completed",
+      "clients": "Happy clients",
+      "experience": "Years of experience",
+      "technologies": "Technologies mastered"
+    }
+  },
+  "about": {
+    "title": "About me",
+    "subtitle": "Passionate about web development and modern technologies",
+    "description": "Full Stack Developer with {{years}} years of experience, I create digital solutions that combine performance, design and exceptional user experience.",
+    "skills_title": "Technical skills",
+    "experience_title": "Professional experience",
+    "download_cv": "Download my resume"
+  },
+  "services": {
+    "title": "Services offered",
+    "subtitle": "Custom solutions for your digital projects",
+    "landing_pages": {
+      "title": "Premium Landing Pages",
+      "description": "Modern design, smooth animations and SEO optimization to maximize your conversions",
+      "features": ["Responsive design", "Smooth animations", "SEO optimization", "Optimal performance"]
+    },
+    "web_apps": {
+      "title": "Full Stack Web Applications",
+      "description": "Complete solutions with React, Node.js and performant databases",
+      "features": ["Scalable architecture", "Secure APIs", "Admin dashboard", "Cloud deployment"]
+    },
+    "ecommerce": {
+      "title": "E-commerce Sites",
+      "description": "Online stores with payment integration and complete management",
+      "features": ["Secure payment", "Product management", "Order tracking", "Integrated analytics"]
+    },
+    "maintenance": {
+      "title": "Maintenance & Support",
+      "description": "Technical support and evolution of your existing applications",
+      "features": ["Reactive support", "Updates", "Optimization", "Enhanced security"]
+    },
+    "cta": "Discuss your project"
+  },
+  "portfolio": {
+    "title": "My work",
+    "subtitle": "Discover a selection of my recent projects",
+    "filter_all": "All",
+    "view_project": "View project",
+    "live_demo": "Live demo",
+    "source_code": "Source code",
+    "technologies": "Technologies used",
+    "back_to_portfolio": "Back to portfolio"
+  },
+  "testimonials": {
+    "title": "What my clients say",
+    "subtitle": "Feedback from satisfied clients"
+  },
+  "contact": {
+    "title": "Let's work together",
+    "subtitle": "Have a project in mind? Let's talk!",
+    "form": {
+      "name": "Your name",
+      "email": "Your email",
+      "subject": "Subject",
+      "message": "Your message",
+      "send": "Send message",
+      "sending": "Sending..."
+    },
+    "info": {
+      "title": "Contact information",
+      "availability": "Availability",
+      "available": "Available for new projects",
+      "response_time": "Response time",
+      "hours": "< 24 hours"
+    },
+    "success": "Message sent successfully! I'll get back to you soon.",
+    "error": "An error occurred. Please try again."
+  },
+  "footer": {
+    "tagline": "Creator of digital experiences",
+    "rights": "All rights reserved",
+    "links": {
+      "title": "Quick links"
+    },
+    "social": {
+      "title": "Follow me"
+    }
+  },
+  "admin": {
+    "login": {
+      "title": "Admin Login",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Sign in",
+      "error": "Invalid email or password"
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "projects": "Projects",
+      "testimonials": "Testimonials",
+      "messages": "Messages",
+      "settings": "Settings",
+      "logout": "Logout"
+    },
+    "projects": {
+      "title": "Projects management",
+      "add_new": "New project",
+      "edit": "Edit",
+      "delete": "Delete",
+      "save": "Save",
+      "cancel": "Cancel"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "read_more": "Read more",
+    "see_more": "See more",
+    "back": "Back",
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "search": "Search",
+    "filter": "Filter"
+  }
+}

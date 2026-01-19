@@ -15,7 +15,6 @@ export const NAV_ITEMS = [
   { label: 'nav.about', path: '/about' },
   { label: 'nav.services', path: '/services' },
   { label: 'nav.portfolio', path: '/portfolio' },
-  { label: 'nav.blog', path: '/blog' },
   { label: 'nav.contact', path: '/contact' }
 ]
 

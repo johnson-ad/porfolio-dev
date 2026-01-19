@@ -104,52 +104,7 @@ Modifiez les fichiers de traduction :
 
 #### Couleurs et thème
 Modifiez `tailwind.config.js` pour personnaliser les couleurs
-
-## 📱 Structure du Projet
-
-```
-porfolio-dev/
-├── public/
-│   ├── robots.txt
-│   ├── sitemap.xml
-│   └── manifest.json
-├── src/
-│   ├── components/      # Composants React
-│   │   ├── common/      # Boutons, Inputs, Cards...
-│   │   ├── layout/      # Header, Footer
-│   │   ├── home/        # Sections de la page d'accueil
-│   │   ├── portfolio/   # Composants portfolio
-│   │   └── admin/       # Dashboard admin
-│   ├── pages/           # Pages de l'application
-│   ├── hooks/           # Custom hooks
-│   ├── services/        # Services API
-│   ├── store/           # State management (Zustand)
-│   ├── utils/           # Utilitaires et helpers
-│   ├── i18n/            # Internationalisation
-│   ├── App.jsx          # Composant principal
-│   ├── main.jsx         # Point d'entrée
-│   └── index.css        # Styles globaux
-├── .env.example         # Variables d'environnement exemple
-├── vite.config.js       # Configuration Vite
-├── tailwind.config.js   # Configuration Tailwind
-└── package.json
-```
-
-## 🚀 Déploiement
-
-### Build Production
-```bash
-npm run build
-```
-
-Le dossier `dist/` contiendra les fichiers prêts pour la production.
-
-### Variables d'environnement en production
-N'oubliez pas de configurer vos variables d'environnement sur votre plateforme de déploiement :
-- `VITE_SUPABASE_URL`
-- `VITE_SUPABASE_ANON_KEY`
-- `VITE_APP_URL`
-
+ 
 ## 📊 Performance
 
 - ⚡ **Lighthouse Score**: 95+
